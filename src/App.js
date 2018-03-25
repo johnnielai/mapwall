@@ -27,7 +27,7 @@ class App extends Component {
           <div className="phone-overlay">
             <img src={phone} alt="phone" />
             <MyMapComponent
-              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+              googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSdEMi70dUjomMOALgOmRak6cza6k1bh4&v=3.exp&libraries=geometry,drawing,places"
               loadingElement={<div style={{ height: '100%' }} />}
               containerElement={<div style={{ height: '620px', width: '310px' }} />}
               mapElement={<div style={{ height: '100%', borderRadius: '10px' }} />}
