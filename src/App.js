@@ -4,6 +4,16 @@ import TopNav from './TopNav/topnav.js';
 
 import phone from './images/Phone.png';
 import './App.css';
+import { withScriptjs, withGoogleMap, GoogleMap } from "react-google-maps"
+
+const MyMapComponent = withScriptjs(withGoogleMap((props) =>
+  <GoogleMap
+    defaultZoom={13}
+    defaultCenter={{ lat: 35.2581236, lng: 98.71583131 }}
+    defaultOptions={{ mapTypeControl: false, streetViewControl: false, fullscreenControl: false, mapTypeId: 'satellite' }}
+  >
+  </GoogleMap>
+))
 
 
 class App extends Component {
@@ -12,12 +22,19 @@ class App extends Component {
       <div className="main">
         <TopNav></TopNav>
         <div className="content">
-          <div className="phone-select"></div>
+          <div className="phone-select">
+          </div>
           <div className="phone-overlay">
-            <img src={phone}/>
+            <img src={phone} alt="phone" />
+            <MyMapComponent
+              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+              loadingElement={<div style={{ height: '100%' }} />}
+              containerElement={<div style={{ height: '620px', width: '310px' }} />}
+              mapElement={<div style={{ height: '100%', borderRadius: '10px' }} />}
+            />
           </div>
         </div>
-        <Particles 
+        <Particles
           params={{
             particles: {
               line_linked: {
@@ -35,7 +52,10 @@ class App extends Component {
             left: '0px',
             width: '100%',
             height: '100%',
-          }}/>
+          }} />
+          <div className="map-footer">
+            Map provided by Google
+          </div>
       </div>
     );
   }

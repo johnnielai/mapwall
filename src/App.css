@@ -1,5 +1,5 @@
 html {
-  background-color: #272727;
+  background-color: #3a3a3a;
 }
 
 .main {
@@ -21,10 +21,44 @@ html {
 
 .phone-overlay {
   z-index: 1;
-  text-align: center;
+  position: relative;
+  display:flex;
+  justify-content: center;
+  top: 20px;
 }
 
 .phone-overlay > img{
+  z-index: 2;
+  position: absolute;
+  pointer-events: none;
   width: 403px;
   height: auto;
+  left:-7px;
+  right:0;
+  top:-55px;
+  margin:auto;
+}
+
+.map-footer {
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  position:fixed;
+  bottom:0;
+  left:0;
+  padding: 10px;
+}
+
+/*
+Hides google maps bottom text
+*/
+a[href^="http://maps.google.com/maps"]{display:none !important}
+a[href^="https://maps.google.com/maps"]{display:none !important}
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc {
+    display:none;
+}
+
+map > div {
+  border-radius: 20px;
 }
