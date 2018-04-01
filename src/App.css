@@ -1,5 +1,5 @@
 html {
-  background-color: #3a3a3a;
+  background-color: #40464a;
 }
 
 .main {
@@ -17,26 +17,23 @@ html {
 .phone-select {
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 
 .phone-overlay {
   z-index: 1;
-  position: relative;
   display:flex;
   justify-content: center;
-  top: 20px;
+  align-items: center;
 }
 
 .phone-overlay > img{
   z-index: 2;
-  position: absolute;
   pointer-events: none;
   width: 403px;
   height: auto;
-  left:-7px;
-  right:0;
-  top:-55px;
-  margin:auto;
+  position: absolute;
+  vertical-align: bottom;
 }
 
 .map-footer {

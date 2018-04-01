@@ -23,13 +23,14 @@ class App extends Component {
         <TopNav></TopNav>
         <div className="content">
           <div className="phone-select">
+            Phone: Mi Mix 2
           </div>
           <div className="phone-overlay">
             <img src={phone} alt="phone" />
             <MyMapComponent
               googleMapURL="https://maps.googleapis.com/maps/api/js?key=AIzaSyCSdEMi70dUjomMOALgOmRak6cza6k1bh4&v=3.exp&libraries=geometry,drawing,places"
               loadingElement={<div style={{ height: '100%' }} />}
-              containerElement={<div style={{ height: '620px', width: '310px' }} />}
+              containerElement={<div style={{ height: '620px', width: '310px', margin: 'auto', padding: '20px 0'}} />}
               mapElement={<div style={{ height: '100%', borderRadius: '10px' }} />}
             />
           </div>
