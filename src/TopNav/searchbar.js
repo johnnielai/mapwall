@@ -5,14 +5,30 @@ import StandaloneSearchBox from "react-google-maps/lib/components/places/Standal
 import './searchbar.css';
 
 class Search extends Component {
+  onPlacesChanged = () => {
+    // const places = this.searchBox.getPlaces();
+  }
+
+  handleLocationChange = (e) => {
+      if (e.key === 'Enter') {
+          var loc = this.input.value;
+          this.props.onSelectLocation(loc);
+      }
+  }
+  
   render() {
     return (
         <div className="search-container">
-            <StandaloneSearchBox>
+            <StandaloneSearchBox
+                ref={(ref) => this.searchbox = ref}
+                onPlacesChanged={this.onPlacesChanged}
+            >
                 <input 
+                    ref={(ref) => this.input = ref}
                     type="text"
                     placeholder="Search for a location"
-                    className="search-bar"/>
+                    className="search-bar"
+                    onKeyPress={this.handleLocationChange}/>
             </StandaloneSearchBox>
         </div>
     );
